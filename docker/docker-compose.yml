@@ -1,0 +1,12 @@
+services:
+    dev:
+        user: "${UID}:${GID}" # 1002:1003
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+            target: dev
+        
+        container_name: dev_test_container
+        image: dev_test_image
+        tty: true       #keep container running! = docker run -t
+        init: true
